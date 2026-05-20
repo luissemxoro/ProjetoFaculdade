@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard - Minhas Tarefas</title>
+    <style>
+        :root { 
+            --bg: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); 
+            --card: rgba(255, 255, 255, 0.15); 
+            --text: #ffffff; 
+        }
+        body.dark-mode { 
+            --bg: #0a0a0a; 
+            --card: rgba(255, 255, 255, 0.05); 
+            --text: #eeeeee; 
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; }
+        body { background: var(--bg); color: var(--text); padding: 30px; min-height: 100vh; transition: 0.4s; }
+
+        header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+        .user-chip { background: rgba(255,255,255,0.2); padding: 10px 25px; border-radius: 50px; font-weight: 500; }
+        
+        /* --- Seção Hoje --- */
+        .today-section { display: flex; gap: 15px; overflow-x: auto; padding: 10px 5px; margin-bottom: 30px; scrollbar-width: none; }
+        .today-card { 
+            min-width: 280px; background: rgba(255, 255, 255, 0.25); backdrop-filter: blur(10px); 
+            padding: 20px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.3); 
+        }
+
+        /* --- Grid e Cards --- */
+        .filters { display: flex; gap: 12px; margin: 25px 0; }
+        .f-btn { background: rgba(0,0,0,0.2); border: none; color: white; padding: 12px 20px; border-radius: 12px; cursor: pointer; }
+        .f-btn.active { background: white; color: #1e3a8a; font-weight: bold; }
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+        .card { 
+            background: var(--card); backdrop-filter: blur(15px); padding: 25px; border-radius: 22px; 
+            border: 1px solid rgba(255,255,255,0.1); position: relative;
+        }
+
+        /* --- Botões de Ação --- */
+        .actions { display: flex; gap: 8px; margin-top: 15px; }
+        .btn-action { 
+            background: rgba(255,255,255,0.2); border: none; color: white; 
+            padding: 8px 12px; border-radius: 8px; cursor: pointer; font-size: 12px; 
+        }
+        .btn-action:hover { background: rgba(255,255,255,0.4); }
+        .btn-del { background: rgba(239, 68, 68, 0.3); }
+
+        .fab { position: fixed; bottom: 35px; right: 35px; width: 65px; height: 65px; background: white; color: #1e3a8a; border: none; border-radius: 50%; font-size: 35px; cursor: pointer; box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+        
+        .modal { display: none; position: fixed; z-index: 999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.75); }
+        .m-content { background: white; color: #333; margin: 8% auto; padding: 35px; border-radius: 25px; width: 420px; }
+        .m-content input, .m-content textarea { width: 100%; padding: 10px; margin: 10px 0; border-radius: 8px; border: 1px solid #ddd; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="user-chip" id="user-greeting">Olá, Luis</div>
+        <button onclick="abrirConfig()" style="background:none; border:none; color:white; cursor:pointer;">⚙️ Opções</button>
+    </header>
+
+    <h2>📅 Tarefas de Hoje</h2>
+    <div id="today-list" class="today-section"></div>
+
+    <div class="filters">
+        <button class="f-btn active" onclick="setFiltro('pendentes', this)">Não Concluídas</button>
+        <button class="f-btn" onclick="setFiltro('concluidas', this)">Concluídas</button>
+        <button class="f-btn" onclick="setFiltro('futuras', this)">Futuras</button>
+    </div>
+
+    <div id="task-list" class="grid"></div>
+
+    <button class="fab" onclick="abrirModal()">+</button>
+
+    <div id="modalTask" class="modal">
+        <div class="m-content">
+            <h3 id="modal-title">Nova Tarefa</h3>
+            <input type="text" id="t-titulo" placeholder="Título">
+            <textarea id="t-desc" placeholder="Descrição"></textarea>
+            <input type="date" id="t-prazo">
+            <button class="btn-action" style="background:#1e3a8a; width:100%; padding:15px;" onclick="salvarTarefa()">SALVAR TAREFA</button>
+            <button onclick="fecharModal()" style="width:100%; margin-top:10px; border:none; background:none; cursor:pointer">Cancelar</button>
+        </div>
+    </div>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+        import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+        import { getFirestore, collection, doc, onSnapshot, updateDoc, deleteDoc, setDoc, addDoc } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+
+        const firebaseConfig = { apiKey: "AIzaSyCrc9WgN_9GD7baU4Ih-FokBvEJaqKBdqI", authDomain: "meusistemadelogin.firebaseapp.com", projectId: "meusistemadelogin" };
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+        const auth = getAuth(app);
+
+        let filtroAtual = 'pendentes';
+        let editId = null;
+
+        onAuthStateChanged(auth, (user) => { if (user) carregar(); else window.location.href = 'index.html'; });
+
+        function carregar() {
+            const hoje = new Date().toISOString().split('T')[0];
+            onSnapshot(collection(db, "tarefas"), (snap) => {
+                const mainList = document.getElementById('task-list');
+                const todayList = document.getElementById('today-list');
+                mainList.innerHTML = ""; todayList.innerHTML = "";
+                let temHoje = false;
+
+                snap.forEach(d => {
+                    const t = d.data();
+                    const id = d.id;
+                    const cardHtml = `
+                        <div class="card">
+                            <h3>${t.titulo}</h3>
+                            <p>${t.descricao}</p>
+                            <small>📅 ${t.prazo}</small>
+                            <div class="actions">
+                                <button class="btn-action" onclick="alternarStatus('${id}', ${t.concluida})">${t.concluida ? 'Reabrir' : 'Concluir'}</button>
+                                <button class="btn-action" onclick="prepararEdicao('${id}', '${t.titulo}', '${t.descricao}', '${t.prazo}')">Editar</button>
+                                <button class="btn-action btn-del" onclick="deletarTarefa('${id}')">🗑️</button>
+                            </div>
+                        </div>`;
+
+                    if (t.prazo === hoje) {
+                        temHoje = true;
+                        todayList.innerHTML += `<div class="today-card"><h3>${t.titulo}</h3><div class="actions"><button class="btn-action" onclick="alternarStatus('${id}', ${t.concluida})">✓</button></div></div>`;
+                    }
+
+                    if (filtroAtual === 'pendentes' && !t.concluida && t.prazo <= hoje) mainList.innerHTML += cardHtml;
+                    if (filtroAtual === 'concluidas' && t.concluida) mainList.innerHTML += cardHtml;
+                    if (filtroAtual === 'futuras' && t.prazo > hoje) mainList.innerHTML += cardHtml;
+                });
+                if (!temHoje) todayList.innerHTML = "<p>Sem tarefas por hoje, procure descansar</p>";
+            });
+        }
+
+        // --- Funções de Ação ---
+        window.alternarStatus = async (id, status) => {
+            await updateDoc(doc(db, "tarefas", id), { concluida: !status });
+        };
+
+        window.deletarTarefa = async (id) => {
+            if (confirm("Deseja apagar esta tarefa?")) await deleteDoc(doc(db, "tarefas", id));
+        };
+
+        window.prepararEdicao = (id, tit, desc, prazo) => {
+            editId = id;
+            document.getElementById('t-titulo').value = tit;
+            document.getElementById('t-desc').value = desc;
+            document.getElementById('t-prazo').value = prazo;
+            document.getElementById('modal-title').innerText = "Editar Tarefa";
+            abrirModal();
+        };
+
+        window.salvarTarefa = async () => {
+            const data = {
+                titulo: document.getElementById('t-titulo').value,
+                descricao: document.getElementById('t-desc').value,
+                prazo: document.getElementById('t-prazo').value,
+                concluida: false
+            };
+            if (editId) await updateDoc(doc(db, "tarefas", editId), data);
+            else await addDoc(collection(db, "tarefas"), data);
+            fecharModal();
+        };
+
+        window.abrirModal = () => document.getElementById('modalTask').style.display = 'block';
+        window.fecharModal = () => { document.getElementById('modalTask').style.display = 'none'; editId = null; };
+        window.setFiltro = (val, btn) => {
+            filtroAtual = val;
+            document.querySelectorAll('.f-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            carregar();
+        };
+    </script>
+</body>
+</html>
