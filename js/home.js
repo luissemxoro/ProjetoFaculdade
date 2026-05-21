@@ -231,7 +231,7 @@ if (btnSalvarNome) {
                     return;
                 }
             }
- 
+    
             alert("Alterações de perfil processadas!");
             modalOpcoes.style.display = 'none'; // Fecha o modal
 
