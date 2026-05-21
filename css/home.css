@@ -1,0 +1,161 @@
+:root { 
+    --bg: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); 
+    --card: rgba(255, 255, 255, 0.15); 
+    --text: #ffffff; 
+}
+
+body.dark-mode { 
+    --bg: #0a0a0a; 
+    --card: rgba(255, 255, 255, 0.05); 
+    --text: #eeeeee; 
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; }
+body { background: var(--bg); color: var(--text); padding: 30px; min-height: 100vh; transition: 0.4s; }
+
+header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+.user-chip { background: rgba(255,255,255,0.2); padding: 10px 25px; border-radius: 50px; font-weight: 500; }
+
+.today-section { display: flex; gap: 15px; overflow-x: auto; padding: 10px 5px; margin-bottom: 30px; scrollbar-width: none; }
+.today-card { 
+    min-width: 280px; background: rgba(255, 255, 255, 0.25); backdrop-filter: blur(10px); 
+    padding: 20px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.3); 
+}
+
+.filters { display: flex; gap: 12px; margin: 25px 0; }
+.f-btn { background: rgba(0,0,0,0.2); border: none; color: white; padding: 12px 20px; border-radius: 12px; cursor: pointer; }
+.f-btn.active { background: white; color: #1e3a8a; font-weight: bold; }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+.card { 
+    background: var(--card); backdrop-filter: blur(15px); padding: 25px; border-radius: 22px; 
+    border: 1px solid rgba(255,255,255,0.1); position: relative;
+}
+
+.actions { display: flex; gap: 8px; margin-top: 15px; }
+.btn-action { 
+    background: rgba(255,255,255,0.2); border: none; color: white; 
+    padding: 8px 12px; border-radius: 8px; cursor: pointer; font-size: 12px; 
+}
+.btn-action:hover { background: rgba(255,255,255,0.4); }
+.btn-del { background: rgba(239, 68, 68, 0.3); }
+
+.fab { position: fixed; bottom: 35px; right: 35px; width: 65px; height: 65px; background: white; color: #1e3a8a; border: none; border-radius: 50%; font-size: 35px; cursor: pointer; box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+
+.modal { display: none; position: fixed; z-index: 999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.75); }
+.m-content { background: white; color: #333; margin: 8% auto; padding: 35px; border-radius: 25px; width: 420px; }
+.m-content input, .m-content textarea { width: 100%; padding: 10px; margin: 10px 0; border-radius: 8px; border: 1px solid #ddd; }
+
+/* Container que cobre a tela toda com um fundo escurecido */
+.modal-container {
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* A caixinha branca do menu */
+.modal-caixa {
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  width: 320px;
+  color: #333333;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  font-family: sans-serif;
+}
+
+.modal-caixa h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #1a1a1a;
+}
+
+.modal-caixa hr {
+  border: 0;
+  border-top: 1px solid #eeeeee;
+  margin-bottom: 15px;
+}
+
+.campo-grupo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.campo-grupo label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #555555;
+}
+
+.campo-grupo input {
+  padding: 10px;
+  border: 1px solid #cccccc;
+  border-radius: 6px;
+  font-size: 15px;
+  outline: none;
+}
+
+.campo-grupo input:focus {
+  border-color: #007bff;
+}
+
+/* Botões da janela */
+.modal-botoes {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.btn-salvar, .btn-cancelar {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn-salvar {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-salvar:hover {
+  background-color: #0056b3;
+}
+
+.btn-cancelar {
+  background-color: #e0e0e0;
+  color: #333333;
+}
+
+.btn-cancelar:hover {
+  background-color: #d5d5d5;
+}
+
+/* Classe para destacar as tarefas concluídas */
+.card-concluido {
+    background-color: #d1fae5 !important; /* Verde claro suave */
+    border-left: 5px solid #10b981 !important; /* Borda lateral verde mais escura */
+    color: #065f46; /* Deixa o texto em um tom de verde escuro para dar leitura */
+}
+
+/* Classe para o botão quando a tarefa estiver concluída */
+.btn-concluido {
+    background-color: #065f46 !important; /* Verde escuro para dar contraste */
+    color: white !important; /* Texto branco para ficar bem legível */
+    border: none;
+}
+
+.btn-concluido:hover {
+    background-color: #044332 !important; /* Um tom ainda mais escuro ao passar o mouse */
+}
