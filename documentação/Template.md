@@ -4,15 +4,13 @@
 
 ## 📋 Informações Básicas
 
-### Nome do Projeto
-To do APP
+### Nome do Projeto: To do WEB
+
 
 ### Equipe
 | Nome | GitHub | Papel Principal |
 |------|--------|-----------------|
-| Luis Henrique Fernandes Rodrigues| luissemxoro | Frontend |
-| Nome 2 | @username2 | Frontend / Backend / Full Stack |
-| Nome 3 | @username3 | Frontend / Backend / Full Stack |
+| Luis Henrique Fernandes Rodrigues| luissemxoro | Full Stack |
 
 ### Link do Repositório
 `https://github.com/luissemxoro/ProjetoFaculdade`
@@ -24,16 +22,17 @@ To do APP
 ### 1. Descrição do Problema
 Descreva claramente o problema que seu projeto pretende resolver:
 - **Quem** enfrenta esse problema?
+
 Pessoas de todas as idades com problema de organização com tarefas e compromissos.
 - **Quando** esse problema ocorre?
-No dia a dia. Pessoas esquecem de compromissos/tarefas e não consegue, organizalas com facilidade e simplicidade.
-- **Por que** esse problema é importante?
-Por que quando se desorganiza algo que é para ser simples, acaba gerando muita perca de tempo, no mundo de hoje em dia, todo minuto agilizado é extremamente importante.
-- **Qual** o impacto negativo desse problema?
-O impacto é relativamente grande e importante, causando perca de minutos ou até horas, por acabar esquecendo ou não tendo um lembrete de compromissos e tarefas que seriam simples ou até mesmo mais importantes, como compromissos de eventos ou atividades.
 
-**Exemplo:**
->A maioria de pessoas que trabalham ou estudam frequentemente esquecem de datas dos seus compromissos ou atividades, oque pode acarretar em graves consequencias. Algo que deveria ser simples pode acabar se tornando em algo mais prejudicial tanto na vida social quanto na profissional.
+No dia a dia. Pessoas esquecem de compromissos/tarefas e não consegue, organizá-las com facilidade e simplicidade.
+- **Por que** esse problema é importante?
+
+Desorganizar processos simples gera desperdício de tempo. Atualmente, onde a agilidade é crucial, otimizar cada minuto torna-se um diferencial indispensável.
+- **Qual** o impacto negativo desse problema?
+
+A falta de monitoramento de prazos gera um impacto severo, causando a perda de tempo precioso devido ao esquecimento de obrigações. A ausência de lembretes afeta desde tarefas simples do dia a dia até compromissos e eventos de alta prioridade.
 
 
 ### 2. Pesquisa de Soluções Existentes
@@ -46,42 +45,42 @@ Liste soluções que já existem e explique suas limitações:
 | Google Tarefas |Visual poluído | Visual intuitivo |
 
 ### 3. Público-Alvo
-- **Idade:** 10-80
-- **Perfil:** Pessoas com muitos compromissos/tarefas
+- **Idade:** Entre 18 e 35 anos.
+- **Perfil:** Estudantes universitários, profissionais autônomos, assistentes administrativos e microempreendedores.
 - **Necessidades específicas:** Gerenciar prazos rígidos com alertas visuais, conciliar múltiplos papéis, esvaziar a mente para reduzir a ansiedade.
-- **Conhecimento tecnológico:** [Iniciante]
+- **Conhecimento tecnológico:** Básico a intermediário.
+
+O público-alvo do **To Do WEB** é composto por estudantes universitários, profissionais autônomos, microempreendedores e indivíduos que gerenciam rotinas dinâmicas e necessitam de uma centralização simples, porém altamente visual, de suas atividades diárias.
 
 ---
 
 ## 💡 Solução Proposta
 
 ### 1. Descrição da Solução
-Descreva sua solução em 2-3 parágrafos. Foque em:
 
-O To do APP une visual minimalista e independência de sistema operacional, funcionando de forma idêntica em qualquer navegador. Ele oferece criação ilimitada de projetos para separar sua rotina sem poluir a tela.Seu diferencial é a separação de tarefas por cores customizadas. Você pode associar tons diferentes para cada tipo de compromisso, permitindo bater o olho na tela e identificar instantaneamente o que é urgente, o que é trabalho ou o que é pessoal.
+O To do WEB une visual minimalista e independência de sistema operacional, funcionando de forma idêntica em qualquer navegador. Ele oferece criação ilimitada de projetos para separar sua rotina sem poluir a tela. Seu diferencial é a separação de tarefas por cores customizadas e filtros. Você pode associar tons diferentes para cada tipo de compromisso, permitindo bater o olho na tela e identificar instantaneamente o que é urgente, o que é trabalho ou o que é pessoal.
 
 
 
 ### 2. Funcionalidades Principais (MVP)
 
-Liste as 3-5 funcionalidades essenciais para o MVP:
+- [ ] **Funcionalidade 1: Interface Minimalista Web-First**
+  **Descrição:** Site acessível por qualquer navegador e sistema operacional, com design limpo e sem poluição visual.
+  **Valor para usuário:** Garante uma experiência idêntica, leve e fluida em qualquer computador ou celular, sem barreiras de ecossistema.
 
-- [ ] **Funcionalidade 1**: [Interface Minimalista Web-First]
-  - Descrição: Site acessível por qualquer navegador e sistema operacional, com design limpo e sem poluição visual.
-  - Valor para usuário: Garante uma experiência idêntica, leve e fluida em qualquer computador ou celular, sem barreiras de ecossistema.
+- [ ] **Funcionalidade 2: Criação Ilimitada de Projetos**
+  **Descrição:** Sistema flexível que permite ao usuário criar quantas pastas e listas personalizadas desejar.
+  **Valor para usuário:** Dá total liberdade para organizar a rotina e separar a vida pessoal da profissional em um único lugar.
 
-- [ ] **Funcionalidade 2**: Criação Ilimitada de Projetos
-  - Descrição: Sistema flexível que permite ao usuário criar quantas pastas e listas personalizadas desejar.
-  - Valor para usuário:  Dá total liberdade para organizar a rotina e separar a vida pessoal da profissional em um único lugar.
-
-- [ ] **Funcionalidade 3**: Organização Visual por Cores
-  - Descrição: Recurso de categorização que permite atribuir cores customizadas para tarefas e listas diferentes.
-  - Valor para usuário: Permite identificar prioridades e tipos de compromissos instantaneamente ao bater o olho na tela.
+- [ ] **Funcionalidade 3: Organização Visual por Cores**
+  **Descrição:** Recurso de categorização que permite atribuir cores customizadas para tarefas e listas diferentes.
+  **Valor para usuário:** Permite identificar prioridades e tipos de compromissos instantaneamente.
 
 ### 3. Funcionalidades Futuras (Pós-MVP)
 
+
 Funcionalidades que seriam interessantes mas não são essenciais:
-- [ ] Modo Foco / Timer Pomodoro
+- [ ] Modo Foco
 - [ ] Subtarefas em Checklist
 - [ ] Anexos de Arquivos
 
@@ -93,20 +92,20 @@ Funcionalidades que seriam interessantes mas não são essenciais:
 
 ```
 ┌─────────────────────────┐
-│      FRONTEND           │
-│         HTML/CSS        │
+│        FRONTEND         │
+│        HTML/CSS         │
 └───────────┬─────────────┘
             │
             ↓ REST API
 ┌─────────────────────────┐
-│      BACKEND            │
-│   JAVA SCRIPT           │
+│        BACKEND          │
+│      JAVA SCRIPT        │
 └───────────┬─────────────┘
             │
             ↓ SQL/NoSQL
 ┌─────────────────────────┐
-│      DATABASE           │
-│       FIREBASE          │
+│        DATABASE         │
+│        FIREBASE         │
 └─────────────────────────┘
 ```
 
@@ -121,10 +120,10 @@ Funcionalidades que seriam interessantes mas não são essenciais:
 
 ### 3. Requisitos Não-Funcionais
 
-- **Performance**: Carregar a página inicial e a lista de tarefas em menos de 1.5 segundos em conexões 3G estáveis.
-- **Segurança**: Criptografia de dados ponta a ponta (HTTPS obrigatório) e armazenamento seguro de senhas com hashing bcrypt.
-- **Usabilidade**: Interface limpa e responsiva que se adapta automaticamente a telas de computadores, tablets e smartphones.
-- **Escalabilidade**: Arquitetura pronta para suportar o crescimento do MVP, aguentando até 1.000 usuários cadastrados sem perda de desempenho.
+- **Performance**: O site deve ser leve e carregar as tarefas rapidamente, mesmo em conexões de internet mais lentas (como o 3G).
+- **Segurança**: Garantir o acesso seguro através de login e senha, protegendo os dados de cadastro e as informações dos usuários.
+- **Usabilidade**: A interface deve ser simples, intuitiva e responsiva, funcionando perfeitamente tanto no computador quanto no celular.
+- **Escalabilidade**: O sistema deve funcionar de forma estável e contínua no navegador, sem travamentos durante o uso diário.
 ---
 
 ## 📅 Planejamento
@@ -133,15 +132,15 @@ Funcionalidades que seriam interessantes mas não são essenciais:
 
 #### Mês 1: Fundação (Semanas 1-4)
 - **Semana 1-2**: Setup e Planejamento
-  - [X] Configurar repositório GitHub - https://github.com/luissemxoro/ProjetoFaculdade
-  - [X] Configurar ambiente de desenvolvimento - VSCode
-  - [X] Criar protótipos - Desenhos/imagens geradas por IA
+  - [x] Configurar repositório GitHub - https://github.com/luissemxoro/ProjetoFaculdade
+  - [x] Configurar ambiente de desenvolvimento - VSCode
+  - [x] Criar protótipos - Desenhos pelo paint e imagens geradas por IA
   
 
 - **Semana 3-4**: Funcionalidade Base
-  - [X] Implementar autenticação básica
-  - [X] Criar estrutura do banco de dados
-  - [X] Desenvolver telas principais (sem funcionalidades)
+  - [x] Implementar autenticação básica
+  - [x] Criar estrutura do banco de dados
+  - [x] Desenvolver telas principais (sem funcionalidades)
 
 #### Mês 2: Desenvolvimento (Semanas 5-8)
 - **Semana 5-6**: Funcionalidades
