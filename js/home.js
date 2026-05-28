@@ -44,6 +44,9 @@ function carregar() {
             const classeConcluido = sampleConcluido ? 'card-concluido' : '';
             const classeBtnConcluido = sampleConcluido ? 'btn-concluido' : '';
             
+            // ATENÇÃO AQUI: Se a tarefa estiver concluída, desativa o botão Editar
+            const atributoDisabled = sampleConcluido ? 'disabled' : '';
+            
             // HTML padrão do card de tarefa (Lista de Baixo)
             const cardHtml = `
                 <div class="card ${classeConcluido}">
@@ -52,7 +55,7 @@ function carregar() {
                     <small>📅 ${t.prazo}</small>
                     <div class="actions">
                         <button class="btn-action toggle-status ${classeBtnConcluido}" data-id="${id}" data-status="${t.concluida}">${t.concluida ? 'Reabrir' : 'Concluir'}</button>
-                        <button class="btn-action editar-tarefa" data-id="${id}" data-titulo="${t.titulo}" data-desc="${t.descricao}" data-prazo="${t.prazo}">Editar</button>
+                        <button class="btn-action editar-tarefa" data-id="${id}" data-titulo="${t.titulo}" data-desc="${t.descricao}" data-prazo="${t.prazo}" ${atributoDisabled}>Editar</button>
                         <button class="btn-action btn-del deletar-tarefa" data-id="${id}">🗑️</button>
                     </div>
                 </div>`;
