@@ -28,10 +28,14 @@ onAuthStateChanged(auth, (user) => {
 
 function carregar() {
     const hoje = new Date().toISOString().split('T')[0];
+    
     onSnapshot(collection(db, "tarefas"), (snap) => {
         const mainList = document.getElementById('task-list');
         const todayList = document.getElementById('today-list');
-        mainList.innerHTML = ""; todayList.innerHTML = "";
+        
+        // Limpa as listas de forma eficiente
+        mainList.innerHTML = ""; 
+        todayList.innerHTML = "";
         let temHoje = false;
 
         snap.forEach(d => {
@@ -42,51 +46,108 @@ function carregar() {
             const classeConcluido = sampleConcluido ? 'card-concluido' : '';
             const classeBtnConcluido = sampleConcluido ? 'btn-concluido' : '';
             const atributoDisabled = sampleConcluido ? 'disabled' : '';
-            
-            // Define a classe CSS de acordo com a prioridade salva no Firebase
             const prioridadeClasse = t.prioridade ? `prioridade-${t.prioridade}` : 'prioridade-baixa';
             
-            // HTML padrão do card de tarefa (Lista de Baixo) com prioridade inclusa
-            const cardHtml = `
-                <div class="card ${prioridadeClasse} ${classeConcluido}">
-                    <h3>${t.titulo}</h3>
-                    <p>${t.descricao}</p>
-                    <small>📅 ${t.prazo}</small>
-                    <div class="actions">
-                        <button class="btn-action toggle-status ${classeBtnConcluido}" data-id="${id}" data-status="${t.concluida}">${t.concluida ? 'Reabrir' : 'Concluir'}</button>
-                        <button class="btn-action editar-tarefa" data-id="${id}" data-titulo="${t.titulo}" data-desc="${t.descricao}" data-prazo="${t.prazo}" data-prioridade="${t.prioridade || 'baixa'}" ${atributoDisabled}>Editar</button>
-                        <button class="btn-action btn-del deletar-tarefa" data-id="${id}">🗑️</button>
-                    </div>
-                </div>`;
+            // --- PROTEÇÃO CONTRA XSS: Criando os elementos de texto com segurança ---
+            const card = document.createElement('div');
+            card.className = `card ${prioridadeClasse} ${classeConcluido}`;
 
-            // SE A TAREFA FOR DE HOJE:
+            const h3 = document.createElement('h3');
+            h3.textContent = t.titulo; // Protegido contra XSS
+
+            const p = document.createElement('p');
+            p.textContent = t.descricao; // Protegido contra XSS
+
+            const small = document.createElement('small');
+            small.textContent = `📅 ${t.prazo}`;
+
+            const actionsDiv = document.createElement('div');
+            actionsDiv.className = 'actions';
+
+            // Botão Concluir/Reabrir
+            const btnToggle = document.createElement('button');
+            btnToggle.className = `btn-action toggle-status ${classeBtnConcluido}`;
+            btnToggle.textContent = t.concluida ? 'Reabrir' : 'Concluir';
+            btnToggle.onclick = async () => {
+                await updateDoc(doc(db, "tarefas", id), { concluida: !sampleConcluido });
+            };
+
+            // Botão Editar
+            const btnEditar = document.createElement('button');
+            btnEditar.className = 'btn-action editar-tarefa';
+            btnEditar.textContent = 'Editar';
+            if (sampleConcluido) btnEditar.setAttribute('disabled', 'true');
+            btnEditar.onclick = () => {
+                editId = id;
+                document.getElementById('t-titulo').value = t.titulo;
+                document.getElementById('t-desc').value = t.descricao;
+                document.getElementById('t-prazo').value = t.deadline || t.prazo; // Garante consistência do campo
+                document.getElementById('t-prioridade').value = t.prioridade || 'baixa';
+                document.getElementById('modal-title').innerText = "Editar Tarefa";
+                abrirModal();
+            };
+
+            // Botão Deletar
+            const btnDeletar = document.createElement('button');
+            btnDeletar.className = 'btn-action btn-del deletar-tarefa';
+            btnDeletar.textContent = '🗑️';
+            btnDeletar.onclick = async () => {
+                if (confirm("Deseja apagar esta tarefa?")) {
+                    await deleteDoc(doc(db, "tarefas", id));
+                }
+            };
+
+            // Monta o bloco de ações e o card principal
+            actionsDiv.appendChild(btnToggle);
+            actionsDiv.appendChild(btnEditar);
+            actionsDiv.appendChild(btnDeletar);
+
+            card.appendChild(h3);
+            card.appendChild(p);
+            card.appendChild(small);
+            card.appendChild(actionsDiv);
+
+            // --- SEÇÃO DE FILTROS DA LISTA GERAL ---
+            if (filtroAtual === 'pendentes' && !t.concluida && t.prazo <= hoje) mainList.appendChild(card);
+            if (filtroAtual === 'concluidas' && t.concluida) mainList.appendChild(card);
+            if (filtroAtual === 'futuras' && t.prazo > hoje) mainList.appendChild(card);
+
+            // --- SEÇÃO TAREFAS DE HOJE (Clone seguro para evitar duplicidade de nós no DOM) ---
             if (t.prazo === hoje) {
                 temHoje = true;
-                const classeConcluidoHoje = t.concluida ? 'card-concluido' : '';
-                const classeBtnConcluidoHoje = t.concluida ? 'btn-concluido' : '';
+                const cardHoje = card.cloneNode(true);
                 
-                todayList.innerHTML += `
-                    <div class="card ${prioridadeClasse} ${classeConcluidoHoje}">
-                        <h3>${t.titulo}</h3>
-                        <p>${t.descricao}</p>
-                        <div class="actions">
-                            <button class="btn-action toggle-status ${classeBtnConcluidoHoje}" data-id="${id}" data-status="${t.concluida}">${t.concluida ? '✓ Reabrir' : 'Concluir'}</button>
-                            <button class="btn-action btn-del deletar-tarefa" data-id="${id}">🗑️</button>
-                        </div>
-                    </div>`;
-            }
+                // Readiciona os eventos aos botões do card clonado (cloneNode não copia eventos executados via propriedade)
+                const botoesHoje = cardHoje.querySelectorAll('.btn-action');
+                
+                // Botão de Status de Hoje
+                botoesHoje[0].textContent = t.concluida ? '✓ Reabrir' : 'Concluir';
+                botoesHoje[0].onclick = async () => {
+                    await updateDoc(doc(db, "tarefas", id), { concluida: !sampleConcluido });
+                };
+                
+                // O botão Editar não existe na lista de hoje na sua lógica original, então removemos se o clone o trouxe
+                if(botoesHoje[1] && botoesHoje[1].textContent === 'Editar') {
+                    botoesHoje[1].remove();
+                }
 
-            // Filtros da lista de baixo
-            if (filtroAtual === 'pendentes' && !t.concluida && t.prazo <= hoje) mainList.innerHTML += cardHtml;
-            if (filtroAtual === 'concluidas' && t.concluida) mainList.innerHTML += cardHtml;
-            if (filtroAtual === 'futuras' && t.prazo > hoje) mainList.innerHTML += cardHtml;
+                // Botão de Deletar de Hoje
+                const btnDelHoje = cardHoje.querySelector('.btn-del');
+                if(btnDelHoje) {
+                    btnDelHoje.onclick = async () => {
+                        if (confirm("Deseja apagar esta tarefa?")) await deleteDoc(doc(db, "tarefas", id));
+                    };
+                }
+
+                todayList.appendChild(cardHoje);
+            }
         });
 
         if (!temHoje) {
-            todayList.innerHTML = "<p>Sem tarefas por hoje, procure descansar</p>";
+            const pAviso = document.createElement('p');
+            pAviso.textContent = "Sem tarefas por hoje, procure descansar";
+            todayList.appendChild(pAviso);
         }
-        
-        atribuirEventosCards();
     });
 }
 
