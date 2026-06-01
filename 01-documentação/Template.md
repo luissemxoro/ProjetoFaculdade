@@ -158,16 +158,15 @@ Funcionalidades que seriam interessantes mas não são essenciais:
 
 #### Mês 3: Finalização (Semanas 9-12)
 - **Semana 9-10**: Refinamento
-  - [ ] Correção de bugs
-  - [ ] Otimizações de performance
-  - [ ] Testes com usuários
-  - [ ] Ajustes baseados em feedback
+  - [X] Correção de bugs
+  - [X] Otimizações de performance
+  - [X] Testes com usuários
+  - [X] Ajustes baseados em feedback
 
 - **Semana 11**: Documentação
   - [ ] README completo
-  - [ ] Documentação de API (se aplicável)
-  - [ ] Guia de instalação
-  - [ ] Manual do usuário
+  - [X] Guia de instalação
+  - [X] Manual do usuário
 
 - **Semana 12**: Apresentação
   - [ ] Preparar slides
@@ -179,9 +178,7 @@ Funcionalidades que seriam interessantes mas não são essenciais:
 
 | Membro | Responsabilidade Principal | Responsabilidade Secundária |
 |--------|---------------------------|----------------------------|
-| [Luis Henrique] | Frontend | Testes |
-| [Nicolas] | Backend | Banco de Dados |
-| [Pedro] | Design/UX | Documentação |
+| [Luis Henrique] | Full Stack | Documentação |
 
 ---
 
@@ -189,18 +186,12 @@ Funcionalidades que seriam interessantes mas não são essenciais:
 
 ### Como saberemos que o projeto foi bem-sucedido?
 
-- [ ] **Funcional**: Todas as funcionalidades MVP implementadas e funcionando
-- [ ] **Usabilidade**: 3+ usuários testaram e consideraram fácil de usar
-- [ ] **Performance**: Tempo de resposta < 2 segundos
-- [ ] **Código**: Sem bugs críticos, código organizado
-- [ ] **Documentação**: README completo permite outro dev configurar o projeto
+- [X] **Funcional**: Todas as funcionalidades MVP implementadas e funcionando
+- [X] **Usabilidade**: 3+ usuários testaram e consideraram fácil de usar
+- [X] **Performance**: Tempo de resposta < 2 segundos
+- [X] **Código**: Sem bugs críticos, código organizado
+- [X] **Documentação**: README completo permite outro dev configurar o projeto
 - [ ] **GitHub**: 20+ commits bem distribuídos, issues organizadas
-
-### Métricas Quantitativas (se aplicável)
-- Número de usuários cadastrados: [meta]
-- Taxa de retenção: [meta]
-- Tempo médio de uso: [meta]
-- Satisfação do usuário (NPS): [meta]
 
 ---
 
@@ -236,30 +227,25 @@ Link para protótipos (Figma, Adobe XD, etc.):
 
 ## 🔒 Considerações de Segurança
 
-Liste considerações de segurança relevantes:
-
-- [X] HTTPS obrigatório
-- [X] Validação de dados de entrada
-- [X] Validação por e-mail
-- [X] Troca de e-mail caso ocorra esquecimento
-- [X] Troca de senha caso ocorra esquecimento
-- [ ] Autenticação segura (senhas hasheadas)
-- [ ] Proteção contra SQL Injection
-- [ ] Proteção contra XSS
-- [ ] [Outras relevantes ao projeto]
-
+- [X] HTTPS obrigatório. 
+- [X] Validação de dados de entrada.
+- [X] Validação por e-mail.
+- [X] Troca de e-mail caso ocorra esquecimento.
+- [X] Troca de senha caso ocorra esquecimento.
+- [X] Autenticação segura (senhas hasheadas).
+- [X] Proteção contra SQL Injection.
 ---
 
 ## 🌍 Impacto Social Esperado
 
 ### 1. Benefícios Diretos
-- [Aumento da Produtividade Diária:] Centralização de tarefas em uma única tela para eliminar distrações e acelerar a execução.
-- [Redução da Carga Mental:] Registro rápido de pendências para evitar o estresse de esquecer compromissos importantes.
-- [Foco nas Prioridades Reais:] Visualização clara de prazos e tarefas urgentes por meio de marcadores visuais coloridos.
+- Aumento da Produtividade Diária: Centralização de tarefas em uma única tela para eliminar distrações e acelerar a execução.
+- Redução da Carga Mental: Registro rápido de pendências para evitar o estresse de esquecer compromissos importantes.
+- Foco nas Prioridades Reais: Visualização clara de prazos e tarefas urgentes por meio de marcadores visuais coloridos.
 
 ### 2. Potencial de Escala
 Expansão para Dispositivos Móveis: Transformar o site em um aplicativo nativo (iOS e Android) para permitir o uso offline e notificações push diretas no celular.
-Conectar o To do APP a ferramentas populares do mercado, como Google Agenda, Slack, Microsoft Teams e e-mails, centralizando o fluxo de trabalho dos usuários.
+Conectar o To do WEB a ferramentas populares do mercado, como Google Agenda, Slack, Microsoft Teams e e-mails, centralizando o fluxo de trabalho dos usuários.
 
 ### 3. Sustentabilidade
 Como o projeto poderia ser mantido a longo prazo?
