@@ -27,9 +27,12 @@ header { display: flex; justify-content: space-between; align-items: center; mar
 .f-btn.active { background: white; color: #1e3a8a; font-weight: bold; }
 
 .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+
+/* Estrutura base dos cards */
 .card { 
     background: var(--card); backdrop-filter: blur(15px); padding: 25px; border-radius: 22px; 
     border: 1px solid rgba(255,255,255,0.1); position: relative;
+    transition: all 0.3s ease;
 }
 
 .actions { display: flex; gap: 8px; margin-top: 15px; }
@@ -46,127 +49,66 @@ header { display: flex; justify-content: space-between; align-items: center; mar
 .m-content { background: white; color: #333; margin: 8% auto; padding: 35px; border-radius: 25px; width: 420px; }
 .m-content input, .m-content textarea { width: 100%; padding: 10px; margin: 10px 0; border-radius: 8px; border: 1px solid #ddd; }
 
-/* Container que cobre a tela toda com um fundo escurecido */
+/* Modais auxiliares */
 .modal-container {
-  position: fixed;
-  z-index: 9999;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.6);
+  display: flex; justify-content: center; align-items: center;
 }
-
-/* A caixinha branca do menu */
 .modal-caixa {
-  background-color: #ffffff;
-  padding: 25px;
-  border-radius: 12px;
-  width: 320px;
-  color: #333333;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-  font-family: sans-serif;
+  background-color: #ffffff; padding: 25px; border-radius: 12px; width: 320px; color: #333333;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3); font-family: sans-serif;
+}
+.modal-caixa h3 { margin-top: 0; margin-bottom: 10px; color: #1a1a1a; }
+.modal-caixa hr { border: 0; border-top: 1px solid #eeeeee; margin-bottom: 15px; }
+.campo-grupo { display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px; }
+.campo-grupo label { font-size: 14px; font-weight: bold; color: #555555; }
+.campo-grupo input { padding: 10px; border: 1px solid #cccccc; border-radius: 6px; font-size: 15px; outline: none; }
+.campo-grupo input:focus { border-color: #007bff; }
+
+.modal-botoes { display: flex; justify-content: flex-end; gap: 10px; }
+.btn-salvar, .btn-cancelar { padding: 10px 16px; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 14px; }
+.btn-salvar { background-color: #007bff; color: white; }
+.btn-salvar:hover { background-color: #0056b3; }
+.btn-cancelar { background-color: #e0e0e0; color: #333333; }
+.btn-cancelar:hover { background-color: #d5d5d5; }
+
+/* --- SEÇÃO CORES DE PRIORIDADE (NOVAS REGRAS) --- */
+
+.prioridade-alta {
+    background: rgba(239, 68, 68, 0.25) !important; 
+    border: 1px solid rgba(239, 68, 68, 0.3) !important;
+    border-left: 7px solid #ef4444 !important;
 }
 
-.modal-caixa h3 {
-  margin-top: 0;
-  margin-bottom: 10px;
-  color: #1a1a1a;
+.prioridade-media {
+    background: rgba(245, 158, 11, 0.25) !important;
+    border: 1px solid rgba(245, 158, 11, 0.3) !important;
+    border-left: 7px solid #f59e0b !important;
 }
 
-.modal-caixa hr {
-  border: 0;
-  border-top: 1px solid #eeeeee;
-  margin-bottom: 15px;
+.prioridade-baixa {
+    background: rgba(255, 255, 255, 0.15) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-left: 7px solid #3b82f6 !important;
 }
 
-.campo-grupo {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  margin-bottom: 20px;
+/* O estado concluído se sobressai a qualquer cor de prioridade */
+.card.card-concluido {
+    background-color: #d1fae5 !important; 
+    border: 1px solid rgba(16, 185, 129, 0.3) !important;
+    border-left: 7px solid #10b981 !important; 
+    color: #065f46 !important;
 }
 
-.campo-grupo label {
-  font-size: 14px;
-  font-weight: bold;
-  color: #555555;
-}
+.btn-concluido { background-color: #065f46 !important; color: white !important; border: none; }
+.btn-concluido:hover { background-color: #044332 !important; }
 
-.campo-grupo input {
-  padding: 10px;
-  border: 1px solid #cccccc;
-  border-radius: 6px;
-  font-size: 15px;
-  outline: none;
-}
-
-.campo-grupo input:focus {
-  border-color: #007bff;
-}
-
-/* Botões da janela */
-.modal-botoes {
-  display: flex;
-  justify-content: flex-end;
-  gap: 10px;
-}
-
-.btn-salvar, .btn-cancelar {
-  padding: 10px 16px;
-  border: none;
-  border-radius: 6px;
-  font-weight: bold;
-  cursor: pointer;
-  font-size: 14px;
-}
-
-.btn-salvar {
-  background-color: #007bff;
-  color: white;
-}
-
-.btn-salvar:hover {
-  background-color: #0056b3;
-}
-
-.btn-cancelar {
-  background-color: #e0e0e0;
-  color: #333333;
-}
-
-.btn-cancelar:hover {
-  background-color: #d5d5d5;
-}
-
-/* Classe para destacar as tarefas concluídas */
-.card-concluido {
-    background-color: #d1fae5 !important; /* Verde claro suave */
-    border-left: 5px solid #10b981 !important; /* Borda lateral verde mais escura */
-    color: #065f46; /* Deixa o texto em um tom de verde escuro para dar leitura */
-}
-
-/* Classe para o botão quando a tarefa estiver concluída */
-.btn-concluido {
-    background-color: #065f46 !important; /* Verde escuro para dar contraste */
-    color: white !important; /* Texto branco para ficar bem legível */
-    border: none;
-}
-
-.btn-concluido:hover {
-    background-color: #044332 !important; /* Um tom ainda mais escuro ao passar o mouse */
-}
-
-/* Estilo perfeito para o botão Editar quando desativado dentro do card concluído */
 .card-concluido button:disabled,
 .card-concluido .editar-tarefa:disabled {
-    background-color: #ffffff !important;         /* Fundo branco para destacar */
-    color: #065f46 !important;                    /* Texto em verde escuro */
-    border: 1px solid #10b981 !important;         /* Bordinha verde sutil */
-    opacity: 0.65 !important;                     /* Visual levemente fosco de desativado */
-    -webkit-text-fill-color: #065f46 !important;  /* Força a cor correta em navegadores baseados no Chrome */
-    cursor: not-allowed !important;               /* Cursor de bloqueio */
+    background-color: #ffffff !important;        
+    color: #065f46 !important;                    
+    border: 1px solid #10b981 !important;         
+    opacity: 0.65 !important;                     
+    -webkit-text-fill-color: #065f46 !important;  
+    cursor: not-allowed !important;               
 }
