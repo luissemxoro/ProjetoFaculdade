@@ -1,0 +1,23 @@
+# Configurações locais do Firebase
+.firebase/
+firebase-debug.log
+*.runtime.log
+
+# Pastas de configuração do VS Code e editores
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# Arquivos temporários e de sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Arquivos de log de erros
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
