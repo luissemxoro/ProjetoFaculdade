@@ -1,3 +1,4 @@
+/* --- VARIÁVEIS E TEMAS --- */
 :root { 
     --bg: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); 
     --card: rgba(255, 255, 255, 0.15); 
@@ -46,7 +47,7 @@ header {
     gap: 15px; 
     overflow-x: auto; 
     overflow-y: hidden; 
-    flex-wrap: nowrap; 
+    flex-wrap: nowrap; /* Impede quebra de linha */
     padding: 10px 5px 20px 5px; 
     margin-bottom: 30px; 
     -webkit-overflow-scrolling: touch; 
@@ -56,7 +57,7 @@ header {
 .today-section .today-card,
 .today-card { 
     min-width: 280px; 
-    flex: 0 0 280px; 
+    flex: 0 0 280px; /* Trava a largura do card */
     background: rgba(255, 255, 255, 0.25); 
     backdrop-filter: blur(10px); 
     padding: 20px; 
@@ -145,6 +146,7 @@ header {
     background: rgba(239, 68, 68, 0.3); 
 }
 
+/* Botão Flutuante (Add Tarefa) */
 .fab { 
     position: fixed; 
     bottom: 35px; 
@@ -160,7 +162,7 @@ header {
     box-shadow: 0 10px 30px rgba(0,0,0,0.3); 
 }
 
-/* --- MODAIS --- */
+/* --- MODAIS DE CADASTRO E EDIÇÃO --- */
 .modal { 
     display: none; 
     position: fixed; 
@@ -284,7 +286,7 @@ header {
     background-color: #d5d5d5; 
 }
 
-/* --- SEÇÃO CORES DE PRIORIDADE (NOVAS REGRAS) --- */
+/* --- CORES DE PRIORIDADE --- */
 .prioridade-alta {
     background: rgba(239, 68, 68, 0.25) !important; 
     border: 1px solid rgba(239, 68, 68, 0.3) !important;
@@ -321,6 +323,7 @@ header {
     background-color: #044332 !important; 
 }
 
+/* Bloqueios para botões desabilitados na conclusão */
 .card-concluido button:disabled,
 .card-concluido .editar-tarefa:disabled {
     background-color: #ffffff !important;        
