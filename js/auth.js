@@ -25,12 +25,27 @@ if (loginForm) {
 if (btnRecuperar) {
     btnRecuperar.addEventListener('click', () => {
         const email = document.getElementById('email').value;
+        
         if (!email) {
             alert("Digite seu e-mail no campo acima primeiro.");
             return;
         }
+        
         sendPasswordResetEmail(auth, email)
-            .then(() => alert("E-mail de recuperação enviado! Check sua caixa de entrada."))
-            .catch(err => alert("Erro ao enviar: " + err.message));
+            .then(() => {
+                alert("E-mail de recuperação enviado! Verifique sua caixa de entrada.");
+            })
+            .catch(err => {
+                console.error("Código do erro:", err.code); // Ajuda a monitorar no console do navegador
+                
+                // Valida se o erro é de usuário não encontrado no banco do Firebase Auth
+                if (err.code === 'auth/user-not-found') {
+                    alert("Sem cadastro para esse e-mail");
+                } else if (err.code === 'auth/invalid-email') {
+                    alert("Por favor, digite um formato de e-mail válido.");
+                } else {
+                    alert("Erro ao enviar: " + err.message);
+                }
+            });
     });
 }
