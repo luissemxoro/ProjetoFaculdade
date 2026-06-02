@@ -64,15 +64,15 @@ O To do WEB une visual minimalista e independência de sistema operacional, func
 
 ### 2. Funcionalidades Principais (MVP)
 
-- [ ] **Funcionalidade 1: Interface Minimalista Web-First**
+- [X] **Funcionalidade 1: Interface Minimalista Web-First**
   **Descrição:** Site acessível por qualquer navegador e sistema operacional, com design limpo e sem poluição visual.
   **Valor para usuário:** Garante uma experiência idêntica, leve e fluida em qualquer computador ou celular, sem barreiras de ecossistema.
 
-- [ ] **Funcionalidade 2: Criação Ilimitada de Projetos**
+- [X] **Funcionalidade 2: Criação Ilimitada de Projetos**
   **Descrição:** Sistema flexível que permite ao usuário criar quantas pastas e listas personalizadas desejar.
   **Valor para usuário:** Dá total liberdade para organizar a rotina e separar a vida pessoal da profissional em um único lugar.
 
-- [ ] **Funcionalidade 3: Organização Visual por Cores**
+- [X] **Funcionalidade 3: Organização Visual por Cores**
   **Descrição:** Recurso de categorização que permite atribuir cores customizadas para tarefas e listas diferentes.
   **Valor para usuário:** Permite identificar prioridades e tipos de compromissos instantaneamente.
 
@@ -158,7 +158,7 @@ Funcionalidades que seriam interessantes mas não são essenciais:
 
 #### Mês 3: Finalização (Semanas 9-12)
 - **Semana 9-10**: Refinamento
-  - [X] Correção de bugs
+  - [ ] Correção de bugs
   - [X] Otimizações de performance
   - [X] Testes com usuários
   - [X] Ajustes baseados em feedback
@@ -258,14 +258,13 @@ Abrir o código do projeto no GitHub permite que outros desenvolvedores ajudem a
 
 ## 📚 Referências
 
-Liste fontes de pesquisa e inspiração:
+Fontes de pesquisa e inspiração:
 
 ### Pesquisa do Problema
 1.  Dados oficiais divulgados pelo G1 Globo apontando que o Brasil registrou recordes sucessivos em licenças médicas decorrentes de transtornos mentais, com um aumento severo motivado pela dificuldade de conciliar demandas profissionais e pessoais. 
 -https://g1.globo.com/trabalho-e-carreira/noticia/2026/01/26/brasil-tem-mais-de-546-mil-afastamentos-por-saude-mental-em-2025-e-bate-recorde-pela-segunda-vez-em-10-anos.ghtml
 2. Estudo científico sobre os impactos da desorganização, como a revisão bibliográfica desenvolvida pela Ânima Educação, que investiga como a falta de gestão de tempo e sobrecarga de tarefas diárias levam ao desgaste psicológico crônico.
 https://repositorio.animaeducacao.com.br/items/3b4b8c5f-70a4-48ce-a329-c2a0973aa620/full
-3. [Entrevistas com usuários]
 
 ### Referências Técnicas
 1. [Documentação de tecnologias usadas]

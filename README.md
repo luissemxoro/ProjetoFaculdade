@@ -18,7 +18,7 @@ Um gerenciador de tarefas moderno e fluido focado em organização diária e exp
 3. Clique com o botão direito sobre o arquivo `index.html` e selecione **"Open with Live Server"**.
 
 ## 📄 Documentação do Projeto
-[Documentação do Projeto](https://github.com/luissemxoro/ProjetoFaculdade/blob/main/documenta%C3%A7%C3%A3o/Template.md)
+[Documentação do Projeto](https://github.com/luissemxoro/ProjetoFaculdade/blob/main/01-documenta%C3%A7%C3%A3o/Template.md)
 
 
 *O planejamento, mapeamento de requisitos e o escopo desta aplicação foram baseados no [Template Oficial de Documentação da Disciplina](https://github.com/luiscarlosjunior/aulas-graduacao/blob/master/05-engenharia-software/disciplina-projetos/template-proposta-projeto.md).
