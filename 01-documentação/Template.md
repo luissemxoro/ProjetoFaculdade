@@ -1,16 +1,15 @@
 # 📝 Template: Proposta de Projeto
 
-> Use este template para documentar sua proposta de projeto para a disciplina
+> Documentação oficial da proposta de projeto desenvolvida para a disciplina de projetos.
 
 ## 📋 Informações Básicas
 
-### Nome do Projeto: To do WEB
-
+### Nome do Projeto: To-Do WEB
 
 ### Equipe
 | Nome | GitHub | Papel Principal |
-|------|--------|-----------------|
-| Luis Henrique Fernandes Rodrigues| luissemxoro | Full Stack |
+| :--- | :--- | :--- |
+| Luis Henrique Fernandes Rodrigues | [@luissemxoro](https://github.com/luissemxoro) | Full Stack / Documentação |
 
 ### Link do Repositório
 `https://github.com/luissemxoro/ProjetoFaculdade`
@@ -20,70 +19,56 @@
 ## 🎯 Identificação do Problema
 
 ### 1. Descrição do Problema
-Descreva claramente o problema que seu projeto pretende resolver:
-- **Quem** enfrenta esse problema?
-
-Pessoas de todas as idades com problema de organização com tarefas e compromissos.
-- **Quando** esse problema ocorre?
-
-No dia a dia. Pessoas esquecem de compromissos/tarefas e não consegue, organizá-las com facilidade e simplicidade.
-- **Por que** esse problema é importante?
-
-Desorganizar processos simples gera desperdício de tempo. Atualmente, onde a agilidade é crucial, otimizar cada minuto torna-se um diferencial indispensável.
-- **Qual** o impacto negativo desse problema?
-
-A falta de monitoramento de prazos gera um impacto severo, causando a perda de tempo precioso devido ao esquecimento de obrigações. A ausência de lembretes afeta desde tarefas simples do dia a dia até compromissos e eventos de alta prioridade.
-
+* **Quem enfrenta esse problema?** Pessoas de todas as idades que encontram dificuldades na organização de tarefas, rotinas e compromissos diários.
+* **Quando esse problema ocorre?** No cotidiano. A falta de simplicidade nas ferramentas faz com que os usuários esqueçam compromissos e falhem em estruturar o dia com agilidade.
+* **Por que esse problema é importante?** A desorganização de processos simples gera um desperdício severo de tempo. Em uma rotina dinâmica, otimizar cada minuto torna-se um diferencial indispensável para a saúde mental e produtividade.
+* **Qual o impacto negativo desse problema?** A ausência de monitoramento de prazos e lembretes visuais causa o esquecimento crônico de obrigações, afetando desde atividades básicas até eventos profissionais de alta prioridade, gerando ansiedade e sobrecarga.
 
 ### 2. Pesquisa de Soluções Existentes
-Liste soluções que já existem e explique suas limitações:
 
-| Solução Existente | Limitações | Como seu projeto é diferente |
-|-------------------|------------|------------------------------|
-| Todoist | O plano gratuito limita a quantidade de projetos ativos. | Não tem limitação de projetos.|
-| Microsoft To Do |  A experiência é muito inferior se você não usa o Window | Não tem problemas que diferencie sua experiência.  |
-| Google Tarefas |Visual poluído | Visual intuitivo |
+| Solução Existente | Limitações | Como o To-Do WEB se diferencia |
+| :--- | :--- | :--- |
+| **Todoist** | O plano gratuito limita rigorosamente a quantidade de projetos ativos. | Permite a criação ilimitada de listas e projetos de forma gratuita. |
+| **Microsoft To Do** | Experiência e integração significativamente inferiores caso o usuário não utilize o ecossistema Windows. | Funciona de forma 100% idêntica, fluida e independente em qualquer navegador ou sistema operacional. |
+| **Google Tarefas** | Interface visual considerada poluída, rígida e com pouca distinção de prioridades. | Design minimalista baseado em *Glassmorphism* com forte apelo visual e intuitivo. |
 
-### 3. Público-Alvo
-- **Idade:** Entre 18 e 35 anos.
-- **Perfil:** Estudantes universitários, profissionais autônomos, assistentes administrativos e microempreendedores.
-- **Necessidades específicas:** Gerenciar prazos rígidos com alertas visuais, conciliar múltiplos papéis, esvaziar a mente para reduzir a ansiedade.
-- **Conhecimento tecnológico:** Básico a intermediário.
-
-O público-alvo do **To Do WEB** é composto por estudantes universitários, profissionais autônomos, microempreendedores e indivíduos que gerenciam rotinas dinâmicas e necessitam de uma centralização simples, porém altamente visual, de suas atividades diárias.
+### 3. Público-Target
+* **Faixa Etária:** Entre 18 e 35 anos.
+* **Perfil:** Estudantes universitários, profissionais autônomos, assistentes administrativos e microempreendedores.
+* **Necessidades específicas:** Gerenciar prazos rígidos por meio de alertas visuais eficientes, conciliar múltiplos papéis (estudo/trabalho/vida pessoal) e esvaziar a mente de pendências para mitigar a ansiedade.
+* **Conhecimento tecnológico:** Básico a intermediário.
 
 ---
 
 ## 💡 Solução Proposta
 
 ### 1. Descrição da Solução
+O **To-Do WEB** une um visual minimalista baseado em *Glassmorphism* à total independência de sistemas operacionais. A aplicação oferece criação ilimitada de projetos para segmentar rotinas sem poluir a tela. 
 
-O To do WEB une visual minimalista e independência de sistema operacional, funcionando de forma idêntica em qualquer navegador. Ele oferece criação ilimitada de projetos para separar sua rotina sem poluir a tela. Seu diferencial é a separação de tarefas por cores customizadas e filtros. Você pode associar tons diferentes para cada tipo de compromisso, permitindo bater o olho na tela e identificar instantaneamente o que é urgente, o que é trabalho ou o que é pessoal.
-
-
+O grande diferencial do projeto reside na **organização visual inteligente por cores e níveis de prioridade**. Ao associar tons e marcadores específicos para cada tipo de compromisso, o usuário consegue identificar de forma instantânea (com um único olhar sobre a tela) o que é urgente, o que pertence ao escopo profissional e o que é pessoal.
 
 ### 2. Funcionalidades Principais (MVP)
 
-- [X] **Funcionalidade 1: Interface Minimalista Web-First**
-  **Descrição:** Site acessível por qualquer navegador e sistema operacional, com design limpo e sem poluição visual.
-  **Valor para usuário:** Garante uma experiência idêntica, leve e fluida em qualquer computador ou celular, sem barreiras de ecossistema.
-
-- [X] **Funcionalidade 2: Criação Ilimitada de Projetos**
-  **Descrição:** Sistema flexível que permite ao usuário criar quantas pastas e listas personalizadas desejar.
-  **Valor para usuário:** Dá total liberdade para organizar a rotina e separar a vida pessoal da profissional em um único lugar.
-
-- [X] **Funcionalidade 3: Organização Visual por Cores**
-  **Descrição:** Recurso de categorização que permite atribuir cores customizadas para tarefas e listas diferentes.
-  **Valor para usuário:** Permite identificar prioridades e tipos de compromissos instantaneamente.
+- [x] **Funcionalidade 1: Interface Minimalista Web-First**
+  * *Descrição:* Interface acessível via navegadores modernos, responsiva, leve e com design limpo.
+  * *Valor:* Garante uma experiência unificada tanto no computador quanto no celular, quebrando barreiras de ecossistema.
+- [x] **Funcionalidade 2: Criação Ilimitada de Projetos**
+  * *Descrição:* Estrutura dinâmica que possibilita ao usuário criar quantas listas personalizadas desejar.
+  * *Valor:* Liberdade total para segmentar obrigações, separando os ambientes profissionais e pessoais em uma só central.
+- [x] **Funcionalidade 3: Organização Visual por Cores e Prioridades**
+  * *Descrição:* Categorização imediata (Alta, Média, Baixa e Concluída) com comportamentos e estilos dinâmicos baseados no status da tarefa.
+  * *Valor:* Reduz o esforço cognitivo do usuário através de identificação visual imediata de urgências.
 
 ### 3. Funcionalidades Futuras (Pós-MVP)
+* [ ] Modo Foco (Temporizador Pomodoro integrado).
+* [ ] Subtarefas estruturadas em formato de Checklist.
+* [ ] Sistema para anexar arquivos e mídias aos cards de tarefas.
 
+---
 
-Funcionalidades que seriam interessantes mas não são essenciais:
-- [ ] Modo Foco
-- [ ] Subtarefas em Checklist
-- [ ] Anexos de Arquivos
+## 🛠️ Especificações Técnicas
 
+### 1. Arquitetura do Sistema
 ---
 
 ## 🛠️ Especificações Técnicas
@@ -112,166 +97,85 @@ Funcionalidades que seriam interessantes mas não são essenciais:
 ### 2. Stack Tecnológica
 
 | Camada | Tecnologia | Justificativa |
-|--------|------------|---------------|
-| **Frontend** | HTML/CSS | [Por ser visualmente simples de manuseio e ter mais intimidade e praticidade] |
-| **Backend** | JavaScrip | [Mais viavel com o front-end escolhido] |
-| **Banco de Dados** | Firebase | [Por ser pratico com o uso do site] |
-| **Hospedagem** | Netlify | [Opção gratuita] |
+| :--- | :--- | :--- |
+| **Frontend** | HTML5 / CSS3 | Escolhidos pela alta flexibilidade na construção do design responsivo (*Glassmorphism*) e familiaridade técnica da equipe. |
+| **Backend** | JavaScript (ES6) | Linguagem nativa da web, garantindo total sinergia com o frontend através de arquitetura baseada em módulos. |
+| **Banco de Dados & Auth** | Firebase (Firestore) | Praticidade na persistência em tempo real e gerenciamento nativo e seguro de sessões de usuários. |
 
 ### 3. Requisitos Não-Funcionais
+* **Performance:** O carregamento da interface e a renderização das tarefas devem ocorrer de forma ágil, garantindo usabilidade estável mesmo em conexões mobile limitadas.
+* **Segurança:** Autenticação robusta controlada via Firebase Auth, validação de e-mails existentes na recuperação de senha e proteção de escopo de leitura/escrita de dados.
+* **Usabilidade:** Design adaptável e intuitivo, oferecendo suporte a rolagem lateral otimizada em dispositivos móveis e suporte a Modo Escuro dinâmico.
+* **Escalabilidade:** Estrutura modular em JavaScript que permite o crescimento estável da aplicação e adição de novas features sem quebras de escopo.
 
-- **Performance**: O site deve ser leve e carregar as tarefas rapidamente, mesmo em conexões de internet mais lentas (como o 3G).
-- **Segurança**: Garantir o acesso seguro através de login e senha, protegendo os dados de cadastro e as informações dos usuários.
-- **Usabilidade**: A interface deve ser simples, intuitiva e responsiva, funcionando perfeitamente tanto no computador quanto no celular.
-- **Escalabilidade**: O sistema deve funcionar de forma estável e contínua no navegador, sem travamentos durante o uso diário.
 ---
 
-## 📅 Planejamento
+## 📅 Planejamento e Cronograma
 
-### Cronograma de 3 Meses
+### Desenvolvimento Realizado e Próximos Passos
 
-#### Mês 1: Fundação (Semanas 1-4)
-- **Semana 1-2**: Setup e Planejamento
-  - [x] Configurar repositório GitHub - https://github.com/luissemxoro/ProjetoFaculdade
-  - [x] Configurar ambiente de desenvolvimento - VSCode
-  - [x] Criar protótipos - Desenhos pelo paint e imagens geradas por IA
-  
+#### 🗓️ Mês 1: Fundação & Estrutura Base (Concluído)
+* [x] Configuração inicial do repositório GitHub e ambiente de desenvolvimento local (VS Code).
+* [x] Desenvolvimento das telas e protótipos de interface.
+* [x] Criação da estrutura de dados e setup inicial do Firebase Console.
+* [x] Implementação dos módulos base de autenticação e tratamento de erros.
 
-- **Semana 3-4**: Funcionalidade Base
-  - [x] Implementar autenticação básica
-  - [x] Criar estrutura do banco de dados
-  - [x] Desenvolver telas principais (sem funcionalidades)
+#### 🗓️ Mês 2: Desenvolvimento de Features & Refinamento (Concluído)
+* [x] Implementação dos fluxos completos de tarefas: Criação, Edição, Deleção e Filtros.
+* [x] Integração total entre os estados de UI (Frontend) e o banco de dados Firestore (Backend).
+* [x] Desenvolvimento da lógica segura de redefinição de senha com tratamento de e-mails inválidos/inexistentes.
+* [x] Aplicação das regras de responsividade (rolagem horizontal na seção "Hoje") e estilização visual das prioridades.
 
-#### Mês 2: Desenvolvimento (Semanas 5-8)
-- **Semana 5-6**: Funcionalidades
-  - [X] Implementar Criação de tarefas
-  - [X] Implementar Edição de Tarefas
-  - [X] Implementar Botão de configurações/Opções
-  - [X] Integração frontend-backend
-  - [X] Testes básicos
-
-- **Semana 7-8**: Funcionalidades Adicionais
-  - [X] Redefinição de senha e e-mail.
-  - [X] Refinamento de UI/UX
-  - [X] Tratamento de erros
-  
-
-#### Mês 3: Finalização (Semanas 9-12)
-- **Semana 9-10**: Refinamento
-  - [ ] Correção de bugs
-  - [X] Otimizações de performance
-  - [X] Testes com usuários
-  - [X] Ajustes baseados em feedback
-
-- **Semana 11**: Documentação
-  - [ ] README completo
-  - [X] Guia de instalação
-  - [X] Manual do usuário
-
-- **Semana 12**: Apresentação
-  - [ ] Preparar slides
-  - [ ] Gravar demo
-  - [ ] Ensaiar apresentação
-  - [ ] Deploy final
+#### 🗓️ Mês 3: Finalização & Entrega (Em Andamento)
+* [x] Correção de bugs críticos de segurança e validação do Firebase Auth.
+* [x] Otimização de performance e organização estrutural do CSS de forma comentada.
+* [x] Finalização do README explicativo principal do repositório.
+* [ ] Preparação dos materiais de apresentação acadêmica (slides e gravação de demo).
 
 ### Divisão de Responsabilidades
-
-| Membro | Responsabilidade Principal | Responsabilidade Secundária |
-|--------|---------------------------|----------------------------|
-| [Luis Henrique] | Full Stack | Documentação |
+* **Luis Henrique Fernandes Rodrigues:** Desenvolvimento Full Stack, Arquitetura do Banco de Dados, Design de Interface (UI/UX) e Escrita da Documentação Técnica.
 
 ---
 
 ## 📊 Métricas de Sucesso
-
-### Como saberemos que o projeto foi bem-sucedido?
-
-- [X] **Funcional**: Todas as funcionalidades MVP implementadas e funcionando
-- [X] **Usabilidade**: 3+ usuários testaram e consideraram fácil de usar
-- [X] **Performance**: Tempo de resposta < 2 segundos
-- [X] **Código**: Sem bugs críticos, código organizado
-- [X] **Documentação**: README completo permite outro dev configurar o projeto
-- [ ] **GitHub**: 20+ commits bem distribuídos, issues organizadas
-
----
-
-## 🎨 Design e Experiência do Usuário
-
-### 1. Fluxo Principal do Usuário
-
-Descreva o fluxo principal passo a passo:
-
-1. Usuário abre o site
-2. Cria seu usuario com facilidade
-3. Loga seu e-mail e sua senha
-4. Cria suas tarefas
-5. Organiza da sua forma
-6. Marca tarefas como "concluido" ou "a fazer"
-7. Desloga
-
-### 2. Wireframes/Protótipos
-
-Link para protótipos (Figma, Adobe XD, etc.):
-`[https://drive.google.com/file/d/1sM5PL4vFiqje3-jLkwKExn0HX97qqKi9/view?usp=drive_link]`
-`[https://drive.google.com/file/d/1pWTqlKFALIxQr1fnh8EeeLNnJq-CaFyH/view?usp=drive_link]`
-
-
-### 3. Princípios de Design
-
-- **Simplicidade**: Uso máximo de espaços em branco, linhas finas e eliminação de menus ocultos ou complexos. As ações principais devem exigir apenas um clique.
-- **Acessibilidade**: Contraste adequado entre os textos e os fundos, suporte para navegação via teclado e fontes legíveis para facilitar a leitura.
-- **Responsividade**: Layout flexível que reorganiza as listas verticalmente em telas menores. Garante a mesma facilidade de uso tanto no monitor do PC quanto no celular.
-- **Feedback visual**: Mudanças imediatas na tela ao realizar ações, como o risco automático no texto ao marcar uma tarefa como concluída e animações suaves ao arrastar os itens.
+- [x] **Funcional:** 100% das funcionalidades descritas no MVP totalmente integradas e operacionais.
+- [x] **Usabilidade:** Testes práticos realizados com usuários reais validando a facilidade e a simplicidade da interface.
+- [x] **Performance:** Tempo de resposta imediato na renderização local e transições de tela fluidas.
+- [x] **Qualidade de Código:** Código desacoplado, refatorado, modularizado e limpo de bugs de bloqueio.
+- [ ] **Engajamento Git:** Histórico robusto com mais de 20 commits estruturados mapeando a evolução das features.
 
 ---
 
 ## 🔒 Considerações de Segurança
+- [x] Conexão segura sob protocolo HTTPS obrigatório via provedor de hospedagem.
+- [x] Validação rigorosa dos campos de entrada de dados no formulário antes das requisições.
+- [x] Tratamento explícito de exceções no client-side para evitar vazamentos de logs de erro do console Firebase.
+- [x] Controle de redefinição de senhas com proteção contra entradas nulas ou formatos inválidos.
 
-- [X] HTTPS obrigatório. 
-- [X] Validação de dados de entrada.
-- [X] Validação por e-mail.
-- [X] Troca de e-mail caso ocorra esquecimento.
-- [X] Troca de senha caso ocorra esquecimento.
-- [X] Autenticação segura (senhas hasheadas).
-- [X] Proteção contra SQL Injection.
 ---
 
 ## 🌍 Impacto Social Esperado
 
 ### 1. Benefícios Diretos
-- Aumento da Produtividade Diária: Centralização de tarefas em uma única tela para eliminar distrações e acelerar a execução.
-- Redução da Carga Mental: Registro rápido de pendências para evitar o estresse de esquecer compromissos importantes.
-- Foco nas Prioridades Reais: Visualização clara de prazos e tarefas urgentes por meio de marcadores visuais coloridos.
+* **Aumento da Produtividade:** Centralização prática que mitiga distrações e organiza fluxos caóticos em um painel limpo.
+* **Redução da Carga Mental:** O registro imediato das pendências atua diretamente na diminuição da ansiedade ligada ao receio de esquecimento de prazos.
 
-### 2. Potencial de Escala
-Expansão para Dispositivos Móveis: Transformar o site em um aplicativo nativo (iOS e Android) para permitir o uso offline e notificações push diretas no celular.
-Conectar o To do WEB a ferramentas populares do mercado, como Google Agenda, Slack, Microsoft Teams e e-mails, centralizando o fluxo de trabalho dos usuários.
+### 2. Sustentabilidade e Futuro
+* **Arquitetura Open-Source:** A disponibilização do código no GitHub abre precedentes para que novos estudantes e desenvolvedores utilizem a aplicação como base acadêmica, propondo melhorias de forma comunitária e sem custos de manutenção de software.
 
-### 3. Sustentabilidade
-Como o projeto poderia ser mantido a longo prazo?
-
-O MVP permanece gratuito com as funções essenciais (projetos ilimitados e reordenação). Recursos avançados lançados pós-MVP (como o Modo Foco Pomodoro e anexos de arquivos) fariam parte de uma assinatura mensal acessível para cobrir os custos de servidores.
-Abrir o código do projeto no GitHub permite que outros desenvolvedores ajudem a corrigir bugs, criar novas funcionalidades e traduzir o app de graça, reduzindo drasticamente o custo e o tempo de desenvolvimento técnico.
-
- 
 ---
 
 ## 📚 Referências
 
-Fontes de pesquisa e inspiração:
-
 ### Pesquisa do Problema
-1.  Dados oficiais divulgados pelo G1 Globo apontando que o Brasil registrou recordes sucessivos em licenças médicas decorrentes de transtornos mentais, com um aumento severo motivado pela dificuldade de conciliar demandas profissionais e pessoais. 
--https://g1.globo.com/trabalho-e-carreira/noticia/2026/01/26/brasil-tem-mais-de-546-mil-afastamentos-por-saude-mental-em-2025-e-bate-recorde-pela-segunda-vez-em-10-anos.ghtml
-2. Estudo científico sobre os impactos da desorganização, como a revisão bibliográfica desenvolvida pela Ânima Educação, que investiga como a falta de gestão de tempo e sobrecarga de tarefas diárias levam ao desgaste psicológico crônico.
-https://repositorio.animaeducacao.com.br/items/3b4b8c5f-70a4-48ce-a329-c2a0973aa620/full
+1. **G1 Globo (Saúde e Carreira):** Dados sobre o recorde de afastamentos por saúde mental no Brasil devido à sobrecarga de tarefas e dificuldades na gestão de tempo.  
+   * Disponível em: `https://g1.globo.com/trabalho-e-carreira/noticia/2026/01/26/brasil-tem-mais-de-546-mil-afastamentos-por-saude-mental-em-2025-e-bate-recorde-pela-segunda-vez-em-10-anos.ghtml`
+2. **Repositório Ânima Educação:** Estudo acadêmico abordando a sobrecarga de atividades, impactos psicológicos e a necessidade crônica de ferramentas eficazes de gestão de tempo.  
+   * Disponível em: `https://repositorio.animaeducacao.com.br/items/3b4b8c5f-70a4-48ce-a329-c2a0973aa620/full`
 
 ### Referências Técnicas
-1. [Documentação de tecnologias usadas]
-2. [Tutoriais seguidos]
-3. [Projetos similares que inspiraram]
-
-
+1. **Firebase Authentication & Firestore Documentation:** Guias e referências oficiais do Google para consumo de métodos de autenticação e persistência NoSQL.
+2. **MDN Web Docs (CSS Flexible Box Layout & Grid):** Documentação técnica utilizada como base para a responsividade e o alinhamento estrutural dos cards e modais.
 ## ✅ Aprovação
 
 ### Checklist de Validação da Proposta
