@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do WEB</title>
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="icon" type="image/x-icon" href="imagens/favicon.png">
+</head>
+<body>
+
+    <header>
+        <div class="user-chip" id="user-greeting">Olá, <span id="userName">luishfrodrigues</span></div>
+        <div>
+            <button id="btn-config" style="background:none; border:none; color:white; cursor:pointer; margin-right: 15px;">⚙️ Opções</button>
+            <button id="btn-logout" style="background:none; border:none; color:#ef4444; cursor:pointer; font-weight:bold;">Sair</button>
+        </div>
+    </header>
+
+    <h2>📅 Tarefas de Hoje</h2>
+    <div id="today-list" class="today-section"></div>
+
+    <div class="filters">
+        <button class="f-btn active" id="btn-filtro-pendentes">Não Concluídas</button>
+        <button class="f-btn" id="btn-filtro-concluidas">Concluídas</button>
+        <button class="f-btn" id="btn-filtro-futuras">Futuras</button>
+    </div>
+
+    <div id="task-list" class="grid"></div>
+
+    <button class="fab" id="btn-abrir-modal">+</button>
+
+    <div id="modalTask" class="modal">
+        <div class="m-content">
+            <h3 id="modal-title">Nova Tarefa</h3>
+            <input type="text" id="t-titulo" placeholder="Título">
+            <textarea id="t-desc" placeholder="Descrição"></textarea>
+            
+            <label for="t-prioridade" style="font-size: 14px; font-weight: bold; color: #555; display: block; margin-top: 10px;">Prioridade:</label>
+            <select id="t-prioridade" style="width: 100%; padding: 10px; margin: 10px 0; border-radius: 8px; border: 1px solid #ddd; background: white; font-size: 15px; cursor: pointer;">
+                <option value="baixa">Baixa 🔵</option>
+                <option value="media">Média 🟡</option>
+                <option value="alta">Alta 🔴</option>
+            </select>
+
+            <input type="date" id="t-prazo">
+            <button class="btn-action" style="background:#1e3a8a; width:100%; padding:15px;" id="btn-salvar-tarefa">SALVAR TAREFA</button>
+            <button id="btn-fechar-modal" style="width:100%; margin-top:10px; border:none; background:none; cursor:pointer">Cancelar</button>
+        </div>
+    </div>
+
+    <div id="modal-opcoes" class="modal">
+        <div class="m-content" style="max-width: 400px;">
+            <h3>Editar Perfil</h3>
+            <hr style="border: 0; border-top: 1px solid #eee; margin-bottom: 15px;">
+            
+            <div style="margin-bottom: 15px; text-align: left;">
+                <label for="input-novo-nome" style="font-size: 14px; color: #555; font-weight: bold; display: block; margin-bottom: 5px;">Nome de exibição:</label>
+                <input type="text" id="input-novo-nome" placeholder="Digite seu nome..." style="width: 100%; box-sizing: border-box; padding: 10px; border: 1px solid #ccc; border-radius: 6px;">
+            </div>
+
+            <div style="margin-bottom: 15px; text-align: left;">
+                <label for="input-novo-email" style="font-size: 14px; color: #555; font-weight: bold; display: block; margin-bottom: 5px;">Alterar E-mail:</label>
+                <input type="email" id="input-novo-email" placeholder="Novo e-mail..." style="width: 100%; box-sizing: border-box; padding: 10px; border: 1px solid #ccc; border-radius: 6px;">
+            </div>
+
+            <div style="margin-bottom: 20px; text-align: left;">
+                <label for="input-nova-senha" style="font-size: 14px; color: #555; font-weight: bold; display: block; margin-bottom: 5px;">Alterar Senha (mínimo 6 caracteres):</label>
+                <input type="password" id="input-nova-senha" placeholder="Nova senha..." style="width: 100%; box-sizing: border-box; padding: 10px; border: 1px solid #ccc; border-radius: 6px;">
+            </div>
+
+            <button class="btn-action" style="background:#10b981; width:100%; padding:15px; font-weight: bold;" id="btn-salvar-nome">SALVAR ALTERAÇÕES</button>
+            <button id="btn-fechar-opcoes" style="width:100%; margin-top:10px; border:none; background:none; cursor:pointer; color: #666;">Cancelar</button>
+        </div>
+    </div>
+
+    <script type="module" src="js/home.js"></script>
+</body>
+</html>
