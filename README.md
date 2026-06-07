@@ -53,4 +53,10 @@ O **To-Do WEB** é uma aplicação desenvolvida para a disciplina de projetos da
 * 📔 [Documentação Interna do Projeto](./01-documenta%C3%A7%C3%A3o/Template.md) — Detalhes sobre o escopo, requisitos e modelagem da aplicação.
 * 🗂️ [Acompanhamento (GitHub Projects)](https://github.com/users/luissemxoro/projects/1) — Visualização do fluxo Kanban de tarefas concluídas e pendentes.
 * 📖 [Manual do Usuário](./README_MANUAL.md) — Guia passo a passo com telas e instruções de uso do sistema.
+
+## 🎥 Apresentação do Projeto
+
+Assista ao vídeo demonstrativo da aplicação com a explicação das funcionalidades, arquitetura e os testes práticos do sistema:
+
+▶️ **[Clique aqui para assistir à apresentação](https://drive.google.com/file/d/1bwv_g6IFIeziu5nqotMKy11qMDGxGAi2/view?usp=drive_link)**
 ---

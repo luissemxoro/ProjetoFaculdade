@@ -142,7 +142,7 @@ O grande diferencial do projeto reside na **organização visual inteligente por
 - [x] **Usabilidade:** Testes práticos realizados com usuários reais validando a facilidade e a simplicidade da interface.
 - [x] **Performance:** Tempo de resposta imediato na renderização local e transições de tela fluidas.
 - [x] **Qualidade de Código:** Código desacoplado, refatorado, modularizado e limpo de bugs de bloqueio.
-- [ ] **Engajamento Git:** Histórico robusto com mais de 20 commits estruturados mapeando a evolução das features.
+- [x] **Engajamento Git:** Histórico robusto com mais de 20 commits estruturados mapeando a evolução das features.
 
 ---
 
