@@ -130,7 +130,11 @@ O grande diferencial do projeto reside na **organização visual inteligente por
 * [x] Correção de bugs críticos de segurança e validação do Firebase Auth.
 * [x] Otimização de performance e organização estrutural do CSS de forma comentada.
 * [x] Finalização do README explicativo principal do repositório.
+<<<<<<< HEAD
 * [x] Preparação dos materiais de apresentação acadêmica (slides e gravação de demo).
+=======
+* [ ] Preparação dos materiais de apresentação acadêmica (slides e gravação de demo).
+>>>>>>> 4692e6f15cbfc0091e3be42e1ce75493b77488ba
 
 ### Divisão de Responsabilidades
 * **Luis Henrique Fernandes Rodrigues:** Desenvolvimento Full Stack, Arquitetura do Banco de Dados, Design de Interface (UI/UX) e Escrita da Documentação Técnica.
